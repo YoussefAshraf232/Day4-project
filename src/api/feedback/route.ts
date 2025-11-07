@@ -9,5 +9,8 @@ export async function GET(){
 }
 
 export async function POST(req: request){
-    const {message}
+    const {message} = await req.json();
+    const item = await prisma.feedbak.create({ data: {message} });
+    return NextResponse.json(item);
+
 }
