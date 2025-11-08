@@ -1,5 +1,5 @@
 generator client {
-  provider = "prisma-client"
+  provider = "prisma-client-js" // or "prisma-client" in v6
   output   = "../src/generated/prisma"
 }
 
@@ -8,8 +8,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model feedback{
-  id    Int  @id @default(autoincrement())
-  message String
+model feedback {
+  id        Int      @id @default(autoincrement())
+  message   String
   createdAt DateTime @default(now())
 }

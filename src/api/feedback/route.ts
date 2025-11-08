@@ -8,9 +8,9 @@ export async function GET(){
     return NextResponse.json(feedbacks);
 }
 
-export async function POST(req: request){
+export async function POST(req: Request){
     const {message} = await req.json();
-    const item = await prisma.feedbak.create({ data: {message} });
+    const item = await prisma.feedback.create({ data: {message} });
     return NextResponse.json(item);
 
 }
